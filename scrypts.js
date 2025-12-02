@@ -1,20 +1,43 @@
 // Playlist {
-//  "Name": "",
-//  "Songs": [],
-//  "Id": 0
+//    "Name": "",
+//    "Songs": []
 // }
 
 // Song {
 //     "Date_Added": 0,
 //     "Duration": 0,
 //     "Path": "",
-//     "Name": "",
-//     "Id": 0
+//     "Name": ""
 // }
 
-const MusicList = document.getElementById("Music-List");
+const MusicListView = document.getElementById("music-list-view");
+const LocalStorageKey = "Playlists";
 
-PlayLists = []
+PlayLists = [];
+
+
+function GetPlaylists() {
+    PlaylistsDocument = localStorage.getItem(LocalStorageKey);
+
+    if (PlaylistsDocument === null) {
+        console.log("LocalStorageKey is Empty");
+
+        return null;
+    }
+
+    PlaylistsDocument = JSON.parse(PlaylistsDocument)
+
+    outPlayLists = []
+
+    for (let i = 0; i < PlaylistsDocument.length; i++) {
+        PlayListElement = PlaylistsDocument[i];
+
+        for (let j = 0; j < PlayListElement.length; j++) {
+            const element = array[];
+            
+        }
+    }
+}
 
 class PlayList {
     Songs = [];
@@ -38,8 +61,4 @@ class Song {
         this.Name = Name;
         this.Id = Id;
     }
-}
-
-for (let i = 0; i < 30; i++) {
-    MusicList.innerHTML += '<div class="music-list-item"></div>';
-}
+};

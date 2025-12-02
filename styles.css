@@ -91,17 +91,14 @@ body {
     overflow-y: auto;
 }
 
-.music-list-item {
+.music-list-item-playlist,
+.music-list-item-song {
     width: 100%;
     height: var(--list-item-height);
 
     border-bottom: var(--main-border-color) 
                    var(--list-item-border-width) 
                    solid;
-}
-
-.music-list-item:checked {
-    background-color: var(--main-element-bg-color-hover);
 }
 
 .music-list-item:hover {
