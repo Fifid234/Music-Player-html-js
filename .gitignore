@@ -1,0 +1,35 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.ncb
+*.opendata
+*.aps
+*.log
+*.bak
+*.resharper
+*.vspscc
+*.vssscc
+*.scc
+
+# Build output
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+# Packages
+packages/
+
+# Node.js
+node_modules/
+
+# Test Results
+TestResults/
+
+# Other temporary files
+*.pdb
+*.ilk
+*.ipch
+*.tlog
+*.lastbuildstate
