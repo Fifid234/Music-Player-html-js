@@ -91,8 +91,7 @@ body {
     overflow-y: auto;
 }
 
-.music-list-item-playlist,
-.music-list-item-song {
+.music-list-item {
     width: 100%;
     height: var(--list-item-height);
 

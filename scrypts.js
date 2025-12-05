@@ -108,19 +108,17 @@ class Song {
 const MusicListView = document.getElementById("music-list-view");
 const LocalStorageKey = "Playlists";
 
-let Playlists = GetPlaylists();
 
-SaveToLocalStorage();
-
-console.log(Playlists);
 
 function GetPlaylists() {
-    let localStorageData = JSON.parse(localStorage.getItem(LocalStorageKey));
     let outPlayLists = [];
+    let localStorageData = null;
 
-    if (localStorageData === null) {
-        console.log("Local storage is", localStorageData);
-        
+    try {
+        localStorageData = JSON.parse(localStorage.getItem(LocalStorageKey));
+    } catch (erer) {
+        console.log("Local storage is", localStorageData)
+
         return null;
     }
 
