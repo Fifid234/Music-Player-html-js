@@ -15,9 +15,9 @@
     --list-container-height: 90%;
 
     --list-item-height: calc(100% / 10);
-    --list-item-border-width: 2px;
+    --list-item-border-width: 3px;
 
-    --list-upperMenu-border-width: 4px;
+    --list-upperMenu-border-width: 5px;
     --list-upperMenu-height: 5%;
 
     --list-inner-container-height: 95%;
@@ -95,6 +95,8 @@ body {
     width: 100%;
     height: var(--list-item-height);
 
+    display: flex;
+
     border-bottom: var(--main-border-color) 
                    var(--list-item-border-width) 
                    solid;
@@ -103,6 +105,29 @@ body {
 .music-list-item:hover {
     background-color: var(--main-element-bg-color-hover);
     cursor: pointer;
+}
+
+.music-list-item-icon {
+    width: auto;
+    height: 100%;
+
+    border-right: var(--list-item-border-width) solid var(--main-border-color);
+}
+
+.music-list-item-content-container {
+    width: 100%;
+    height: 100%;
+
+    padding: 5px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.music-list-item-text {
+
 }
 
 
