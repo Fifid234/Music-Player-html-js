@@ -23,20 +23,32 @@ class Song {
 };
 
 
-const MusicListView = document.getElementById("music-list");
+const MusicListElement = document.getElementById("music-list");
 const LocalStorageKey = "Playlists";
 
+MusicListElement.addEventListener("click", (event) => {
+    const clickedItem = event.target.closest(".list-item");
+
+    MusicListElement.querySelector(".checked")?.classList.remove("checked");
+    clickedItem?.classList.add("checked");
+});
+
+let Playlists = GetPlaylists();
+
+let CurrentPlaylist;
+let CurrentSong;
+
 for (let i = 1; i <= 20; i++) {
-    MusicList.innerHTML += 
+    MusicListElement.innerHTML += 
     `
-            <div class="list-item">
-                <img class="list-item-icon" src="Assets/Playlist-Icon.png">
-                <div class="list-item-text-container">
-                    <div class="list-item-text-name">Song Title - Artist Name</div>
-                    <div class="list-item-text-duration">3:30</div>
-                </div>
-            </div>
-        `;
+    <div class="list-item">
+        <img class="list-item-icon" src="Assets/Playlist-Icon.png">
+        <div class="list-item-text-container">
+            <div class="list-item-text-name">Song Title - Artist Name</div>
+            <div class="list-item-text-duration">3:30</div>
+        </div>
+    </div>
+    `;
 }
 
 
@@ -49,7 +61,7 @@ function GetPlaylists() {
     } catch (err) {
         console.log("Local storage is", localStorageData)
 
-        return null;
+        return [];
     }
 
     for (let i = 0; i < localStorageData.length - 1; i++) {
