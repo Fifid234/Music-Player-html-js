@@ -3,39 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Music Player</title>
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="controls-container"></div>
-        
     <div class="list-container">
+        <div class="list-menu"></div>
+        <div class="list-inner-container"
+             id="music-list">
 
-        <div class="list-upperMenu">
-            <!--
-            <button class="list-upperMenu-BackButton"
-            id="BackButton"></button>
-            
-            <p class="list-upperMenu-playlistName"
-            id="playlistName"></p>
-            -->
-        </div>
-
-        <div class="list-inner-container" 
-             id="music-list-view">
-
-            <div class="music-list-item">
-                <img class="music-list-item-icon" 
-                     src="Assets/Playlist-Icon.png">
-
-                <div class="music-list-item-content-container">
-                    <div class="music-list-item-text">Light My Name</div>
-                    <div class="music-list-item-text">2:30</div>
+            <div class="list-item">
+                <img class="list-item-icon" src="Assets/Playlist-Icon.png">
+                <div class="list-item-text-container">
+                    <div class="list-item-text-name">Song Title - Artist Name</div>
+                    <div class="list-item-text-duration">3:30</div>
                 </div>
             </div>
+
         </div>
-
     </div>
-
 </body>
-<script src="scrypts.js"></script>
+<script src="scripts.js"></script>
 </html>

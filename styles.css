@@ -1,32 +1,40 @@
 :root {
     --main-bg-color: rgb(48, 40, 40);
     --main-border-color: rgb(0, 0, 0);
+
+    --main-font-color: rgb(255, 255, 255);
+    --main-font-size-standart: 18px;
+
     --main-element-bg-color: rgb(68, 58, 58);
     --main-element-bg-color-hover: rgb(88, 78, 78);
 
-    --desktop-page-padding: 30px;
-    --desktop-page-gap: 30px;
-    --desktop-border-radius: 15px;
+    --main-border-radius: 15px;
+    --main-page-gap: 3%;
 
-    --controls-container-width: 70%;
+
     --controls-container-height: 90%;
+    --controls-container-width: 66%;
 
-    --list-container-width: 30%;
     --list-container-height: 90%;
+    --list-container-width: 26%;
 
-    --list-item-height: calc(100% / 10);
-    --list-item-border-width: 3px;
+    --list-menu-height: 5%;
+    --list-menu-border-bottom: 4px solid var(--main-border-color);
 
-    --list-upperMenu-border-width: 5px;
-    --list-upperMenu-height: 5%;
+    --list-inner-container-height: 90%;
+    --list-inner-container-border-bottom:  4px solid var(--main-border-color);
 
-    --list-inner-container-height: 95%;
+    --list-item-height: 10%;
+    --list-item-border-bottom: 3px solid var(--main-border-color);
+
+    --list-item-icon-border-right: 3px solid var(--main-border-color);
 }
 
 * {
+    box-sizing: border-box;
+
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html, body {
@@ -37,124 +45,110 @@ html, body {
 body {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 
-    padding: 0 var(--desktop-page-padding);
-    gap: var(--desktop-page-gap);
+    gap: var(--main-page-gap);
 
     background-color: var(--main-bg-color);
 }
 
-
-
 .controls-container {
-    width: var(--controls-container-width);
     height: var(--controls-container-height);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+    width: var(--controls-container-width);
 
     background-color: var(--main-element-bg-color);
-    border-radius: var(--desktop-border-radius);
+    border-radius: var(--main-border-radius);
 }
-
-
 
 .list-container {
-    width: var(--list-container-width);
-    height: var(--list-container-height);
-    
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: flex-start;
+
+    height: var(--list-container-height);
+    width: var(--list-container-width);
+
     background-color: var(--main-element-bg-color);
-    border-radius: var(--desktop-border-radius);
+    border-radius: var(--main-border-radius);
 }
 
-.list-upperMenu {
+.list-menu {
     width: 100%;
-    height: var(--list-upperMenu-height);
+    height: var(--list-menu-height);
 
-    border-bottom: var(--main-border-color) 
-                   var(--list-upperMenu-border-width) 
-                   solid;
+    border-bottom: var(--list-menu-border-bottom);
 }
 
 .list-inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow-y: auto;
+
     width: 100%;
     height: var(--list-inner-container-height);
 
-    overflow-y: auto;
+    border-bottom: var(--list-inner-container-border-bottom);
 }
 
-.music-list-item {
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
     width: 100%;
     height: var(--list-item-height);
 
-    display: flex;
-
-    border-bottom: var(--main-border-color) 
-                   var(--list-item-border-width) 
-                   solid;
+    border-bottom: var(--list-item-border-bottom);
 }
 
-.music-list-item:hover {
+.list-item:hover {
     background-color: var(--main-element-bg-color-hover);
     cursor: pointer;
 }
 
-.music-list-item-icon {
-    width: auto;
+.list-item-icon {
     height: 100%;
 
-    border-right: var(--list-item-border-width) solid var(--main-border-color);
+    border-right: var(--list-item-icon-border-right);
 }
 
-.music-list-item-content-container {
-    width: 100%;
-    height: 100%;
+.list-item-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 auto;
 
     padding: 5px;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
+    min-width: 0;
+
+    height: 100%;
 }
 
-.music-list-item-text {
+.list-item-text-name {
+    display: block;
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: var(--main-font-color);
+    font-size: var(--main-font-size-standart);
+
+    width: 100%;
 }
 
+.list-item-text-duration {
+    display: block;
 
+    color: var(--main-font-color);
+    font-size: var(--main-font-size-standart);
 
-
-@media (max-width: 760px) {
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        padding: 0;
-        gap: 0;
-    }
-
-
-    .controls-container {
-        width: 100%;
-        height: 80%;
-
-        border-radius: 0;
-    }
-
-    .list-container {
-        width: 100%;
-        height: 20%;
-
-        border-radius: 0;
-    }
+    width: 100%;
 }

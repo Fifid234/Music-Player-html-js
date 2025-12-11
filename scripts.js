@@ -1,85 +1,3 @@
-// Playlist {
-//    "Name": "",
-//    "Id": 0
-//    "Songs": []
-// }
-
-// Song {
-//     "Date_Added": 0,
-//     "Duration": 0,
-//     "Path": "",
-//     "Name": ""
-//     "Id": 0
-// }
-
-// b = [
-// new PlayList([
-//     new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// ), new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// ),
-// new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 )
-// ], 123),
-// new PlayList([
-//     new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 ), 
-// new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// ),
-// new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// )
-// ], 123), 
-// new PlayList([
-//     new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// ), new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// ),
-// new Song(
-//     12123,
-//     4,
-//     "erer",
-//     "Hell",
-//     131 
-// )
-// ], 123)]
-
-
 class PlayList {
     Songs = null;
     Id = null;
@@ -105,9 +23,21 @@ class Song {
 };
 
 
-const MusicListView = document.getElementById("music-list-view");
+const MusicListView = document.getElementById("music-list");
 const LocalStorageKey = "Playlists";
 
+for (let i = 1; i <= 20; i++) {
+    MusicList.innerHTML += 
+    `
+            <div class="list-item">
+                <img class="list-item-icon" src="Assets/Playlist-Icon.png">
+                <div class="list-item-text-container">
+                    <div class="list-item-text-name">Song Title - Artist Name</div>
+                    <div class="list-item-text-duration">3:30</div>
+                </div>
+            </div>
+        `;
+}
 
 
 function GetPlaylists() {
@@ -116,7 +46,7 @@ function GetPlaylists() {
 
     try {
         localStorageData = JSON.parse(localStorage.getItem(LocalStorageKey));
-    } catch (erer) {
+    } catch (err) {
         console.log("Local storage is", localStorageData)
 
         return null;
